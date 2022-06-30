@@ -2,11 +2,15 @@ import axios, { AxiosError, AxiosResponse } from 'axios';
 import { toast } from 'react-toastify';
 import { history } from '../..';
 import { Activity } from '../models/activity';
+import { Grupmoshat } from '../models/grupmoshat';
+import { Ushtrimi } from '../models/ushtrimi';
 import { Njoftim } from '../models/njoftim';
 import { User, UserFormValues } from '../models/user';
 import { Lojtaret, LojtariFormValues } from '../models/UserLojtari';
 import { Trajneri, TrajneriFormValues } from '../models/UserTrajneri';
 import { store } from '../stores/store';
+import { raportet } from '../models/Raportet';
+import { Orari } from '../models/orari';
 
 const sleep = (delay: number) => {
     return new Promise((resolve) => {
@@ -86,7 +90,7 @@ const Account = {
 const LojtariAccount = {
     current : () => requests.get<Lojtaret>('/lojtariaccount/currentLojtari'),
     login: (user : LojtariFormValues) => requests.post<Lojtaret>('/lojtariaccount/loginLojtari', user),
-    register: (user: LojtariFormValues) => requests.post<Lojtaret>('/nxenesiaccount/registerLojtari',user)
+    register: (user: LojtariFormValues) => requests.post<Lojtaret>('/lojtariaccount/registerLojtari',user)
 
 }
 
@@ -114,6 +118,44 @@ const Lojtarett = {
     delete: (id: string) => axios.delete<void>(`/Lojtari/${id}`)
 }
 
+const GrupmoshatT ={
+    list: () => requests.get<Grupmoshat[]>('/grupmoshatT'),
+    details: (id: string) => requests.get<Grupmoshat>(`/grupmoshatT/${id}`),
+    create: (grupmoshat:Grupmoshat) => axios.post<void>('/grupmoshatT',grupmoshat),
+    update: (grupmoshat:Grupmoshat) => axios.put<void>(`/grupmoshatT/${grupmoshat.id}`,grupmoshat),
+    delete: (id: string) => axios.delete<void>(`/grupmoshatT/${id}`)
+}
+
+const Raportet ={
+    list: () => requests.get<raportet[]>('/Raportet'),
+    details: (id: string) => requests.get<raportet>(`/Raportet/${id}`),
+    create: (raportet:raportet, UshtrimiId:string,GrupmoshaId:string,LojtariId:string) => 
+    axios.post<void>(`/Raportet/${UshtrimiId},${GrupmoshaId},${LojtariId}`,raportet),
+    update: (raportet:raportet) => 
+    axios.put<void>(`/Raportet/${raportet.id}`,raportet),
+    delete: (id: string) => axios.delete<void>(`/Raportet/${id}`)
+}
+
+const Oraret ={
+    list: () => requests.get<Orari[]>('/Oraret'),
+    details: (id: string) => requests.get<Orari>(`/Oraret/${id}`),
+    create: (oraret:Orari, UshtrimiId: string, GrupmoshaId: string) => 
+    axios.post<void>(`/Oraret/${GrupmoshaId},${UshtrimiId}`,oraret),
+    update: (oraret:Orari) => 
+    axios.put<void>(`/Oraret/${oraret.id}`,oraret),
+    delete: (id: string) => axios.delete<void>(`/Oraret/${id}`)
+}
+
+const Ushtrimet ={
+    list: () => requests.get<Ushtrimi[]>('/ushtrimet'),
+    details: (id: string) => requests.get<Ushtrimi>(`/ushtrimet/${id}`),
+    create: (ushtrimi:Ushtrimi) => axios.post<void>('/ushtrimet',ushtrimi),
+    update: (ushtrimi:Ushtrimi) => axios.put<void>(`/ushtrimet/${ushtrimi.id}`,ushtrimi),
+    delete: (id: string) => axios.delete<void>(`/ushtrimet/${id}`)
+
+
+}
+
 const Njoftimet = {
     list: () => requests.get<Njoftim[]>('/njoftimet'),
     details: (id: string) => requests.get<Njoftim>(`/njoftimet/${id}`),
@@ -129,6 +171,10 @@ const agent = {
     TrajneriAccount,
     Trajnerii,
     Lojtarett,
+    GrupmoshatT,
+    Ushtrimet,
+    Raportet,
+    Oraret,
     Njoftimet
 }
 
