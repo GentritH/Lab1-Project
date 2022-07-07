@@ -15,16 +15,19 @@ export default observer(function NavBarTrajneri() {
                     Akademi Futbolli
                 </Menu.Item>
 
-                <Menu.Item as={NavLink} to='/Trajneri/Trajneret'>Trajneri</Menu.Item>
-                
-                <Menu.Item as={NavLink} to='/Trajneri/Lojtaret' name='Lojtaret' />
                 <Menu.Item as={NavLink} to='/Trajneri/activities' name='Sukseset' />
-                <Menu.Item as={NavLink} to='/Trajneri/njoftimet' name='Njoftimet' />
+                <Menu.Item as={NavLink} to='/Trajneri/Trajneret'>Trajneri</Menu.Item>
+                <Menu.Item as={NavLink} to='/Trajneri/Lojtaret' name='Lojtaret' />
+                {/*<Menu.Item as={NavLink} to='/Trajneri/njoftimet' name='Njoftimet' />*/}
+                <Menu.Item as={NavLink} to='/Trajneri/raportet' name='Raportet' />
+                <Menu.Item as={NavLink} to='/Trajneri/grupmoshatT' name='Grupmoshat' />
+                <Menu.Item as={NavLink} to='/Trajneri/ushtrimet' name='Ushtrimet' />
+                <Menu.Item as={NavLink} to='/Trajneri/oraret' name='Orari' />
 
                 
-                <Menu.Item>
+                {/*<Menu.Item>
                     <Button as={NavLink} to='/Trajneri/createNjoftim' positive content='Create Njoftim' />
-                </Menu.Item>
+                </Menu.Item>*/}
                 <Menu.Item>
                     <Button as={NavLink} to='/Trajneri/createActivity' positive content='Create Sukseset' floated='right' />
                 </Menu.Item>

@@ -112,6 +112,66 @@ namespace Persistence
         }
 
 
+        public static async Task SeedDataGrupmoshat(DataContext context)
+        {
+         
+            if (context.GrupmoshatT.Any()) return;
+            var grupmoshatT = new List<Grupmoshat>
+            {
+                new Grupmoshat
+                {
+                    EmriGrupmoshes = "Ekipa A"
+                  
+                },
+                new Grupmoshat
+                {
+                    EmriGrupmoshes = "Grupmosha U18"
+                },
+                 new Grupmoshat
+                {
+                    EmriGrupmoshes = "Grupmosha U16"
+                },
+                 new Grupmoshat
+                {
+                    EmriGrupmoshes = "Grupmosha U14"
+                },
+                  new Grupmoshat
+                {
+                    EmriGrupmoshes = "Grupmosha U12"
+                }
+            };
+                
+            await context.GrupmoshatT.AddRangeAsync(grupmoshatT);
+            await context.SaveChangesAsync();
+        }
+
+
+        public static async Task SeedDataUshtrimi(DataContext context)
+        {
+             if(context.Ushtrimet.Any()) return;
+            var ushtrimet = new List<Ushtrimi>
+            {
+                new Ushtrimi
+                {
+                    EmriUshtrimit = "Gjuajtje te lira",
+                    Pershkrimi="Sot.............",
+                },
+                new Ushtrimi
+                {
+                    EmriUshtrimit = "Penallti",
+                    Pershkrimi="Sot.............",
+                },
+                new Ushtrimi
+                {
+                    EmriUshtrimit = "Fittnes",
+                    Pershkrimi="Sot.............",
+                }
+            };
+             await context.Ushtrimet.AddRangeAsync(ushtrimet);
+            await context.SaveChangesAsync();        
+        }
+
+
 
         public static async Task SeedDataNjoftim(DataContext context, UserManager<AppUser> userManager)
         {

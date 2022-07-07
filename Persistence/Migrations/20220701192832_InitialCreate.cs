@@ -66,6 +66,18 @@ namespace Persistence.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "GrupmoshatT",
+                columns: table => new
+                {
+                    Id = table.Column<Guid>(type: "TEXT", nullable: false),
+                    EmriGrupmoshes = table.Column<string>(type: "TEXT", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_GrupmoshatT", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Lojtaret",
                 columns: table => new
                 {
@@ -138,6 +150,19 @@ namespace Persistence.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Trajneret", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Ushtrimet",
+                columns: table => new
+                {
+                    Id = table.Column<Guid>(type: "TEXT", nullable: false),
+                    EmriUshtrimit = table.Column<string>(type: "TEXT", nullable: true),
+                    Pershkrimi = table.Column<string>(type: "TEXT", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Ushtrimet", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -246,6 +271,74 @@ namespace Persistence.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
+            migrationBuilder.CreateTable(
+                name: "Oraret",
+                columns: table => new
+                {
+                    Id = table.Column<Guid>(type: "TEXT", nullable: false),
+                    GrupmoshaId = table.Column<Guid>(type: "TEXT", nullable: false),
+                    UshtrimiId = table.Column<Guid>(type: "TEXT", nullable: false),
+                    Hene = table.Column<string>(type: "TEXT", nullable: true),
+                    Marte = table.Column<string>(type: "TEXT", nullable: true),
+                    Merkure = table.Column<string>(type: "TEXT", nullable: true),
+                    Enjte = table.Column<string>(type: "TEXT", nullable: true),
+                    Premte = table.Column<string>(type: "TEXT", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Oraret", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Oraret_GrupmoshatT_GrupmoshaId",
+                        column: x => x.GrupmoshaId,
+                        principalTable: "GrupmoshatT",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_Oraret_Ushtrimet_UshtrimiId",
+                        column: x => x.UshtrimiId,
+                        principalTable: "Ushtrimet",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Raportet",
+                columns: table => new
+                {
+                    Id = table.Column<Guid>(type: "TEXT", nullable: false),
+                    GrupmoshaId = table.Column<Guid>(type: "TEXT", nullable: false),
+                    UshtrimiId = table.Column<Guid>(type: "TEXT", nullable: false),
+                    LojtariId = table.Column<string>(type: "TEXT", nullable: true),
+                    Muaji = table.Column<string>(type: "TEXT", nullable: true),
+                    Java = table.Column<string>(type: "TEXT", nullable: true),
+                    Angazhimi = table.Column<string>(type: "TEXT", nullable: true),
+                    Performanca = table.Column<string>(type: "TEXT", nullable: true),
+                    Aktivititeti = table.Column<string>(type: "TEXT", nullable: true),
+                    Komenti = table.Column<string>(type: "TEXT", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Raportet", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Raportet_GrupmoshatT_GrupmoshaId",
+                        column: x => x.GrupmoshaId,
+                        principalTable: "GrupmoshatT",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_Raportet_Lojtaret_LojtariId",
+                        column: x => x.LojtariId,
+                        principalTable: "Lojtaret",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_Raportet_Ushtrimet_UshtrimiId",
+                        column: x => x.UshtrimiId,
+                        principalTable: "Ushtrimet",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetRoleClaims_RoleId",
                 table: "AspNetRoleClaims",
@@ -282,6 +375,31 @@ namespace Persistence.Migrations
                 table: "AspNetUsers",
                 column: "NormalizedUserName",
                 unique: true);
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Oraret_GrupmoshaId",
+                table: "Oraret",
+                column: "GrupmoshaId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Oraret_UshtrimiId",
+                table: "Oraret",
+                column: "UshtrimiId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Raportet_GrupmoshaId",
+                table: "Raportet",
+                column: "GrupmoshaId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Raportet_LojtariId",
+                table: "Raportet",
+                column: "LojtariId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Raportet_UshtrimiId",
+                table: "Raportet",
+                column: "UshtrimiId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -305,10 +423,13 @@ namespace Persistence.Migrations
                 name: "AspNetUserTokens");
 
             migrationBuilder.DropTable(
-                name: "Lojtaret");
+                name: "Njoftimet");
 
             migrationBuilder.DropTable(
-                name: "Njoftimet");
+                name: "Oraret");
+
+            migrationBuilder.DropTable(
+                name: "Raportet");
 
             migrationBuilder.DropTable(
                 name: "Trajneret");
@@ -318,6 +439,15 @@ namespace Persistence.Migrations
 
             migrationBuilder.DropTable(
                 name: "AspNetUsers");
+
+            migrationBuilder.DropTable(
+                name: "GrupmoshatT");
+
+            migrationBuilder.DropTable(
+                name: "Lojtaret");
+
+            migrationBuilder.DropTable(
+                name: "Ushtrimet");
         }
     }
 }

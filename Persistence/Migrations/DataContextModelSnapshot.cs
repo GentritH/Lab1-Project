@@ -115,6 +115,20 @@ namespace Persistence.Migrations
                     b.ToTable("AspNetUsers");
                 });
 
+            modelBuilder.Entity("Domain.Grupmoshat", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("EmriGrupmoshes")
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("GrupmoshatT");
+                });
+
             modelBuilder.Entity("Domain.Lojtari", b =>
                 {
                     b.Property<string>("Id")
@@ -208,6 +222,86 @@ namespace Persistence.Migrations
                     b.ToTable("Njoftimet");
                 });
 
+            modelBuilder.Entity("Domain.Orari", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Enjte")
+                        .HasColumnType("TEXT");
+
+                    b.Property<Guid>("GrupmoshaId")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Hene")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Marte")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Merkure")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Premte")
+                        .HasColumnType("TEXT");
+
+                    b.Property<Guid>("UshtrimiId")
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("GrupmoshaId");
+
+                    b.HasIndex("UshtrimiId");
+
+                    b.ToTable("Oraret");
+                });
+
+            modelBuilder.Entity("Domain.Raporti", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Aktivititeti")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Angazhimi")
+                        .HasColumnType("TEXT");
+
+                    b.Property<Guid>("GrupmoshaId")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Java")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Komenti")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("LojtariId")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Muaji")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Performanca")
+                        .HasColumnType("TEXT");
+
+                    b.Property<Guid>("UshtrimiId")
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("GrupmoshaId");
+
+                    b.HasIndex("LojtariId");
+
+                    b.HasIndex("UshtrimiId");
+
+                    b.ToTable("Raportet");
+                });
+
             modelBuilder.Entity("Domain.Trajneri", b =>
                 {
                     b.Property<string>("Id")
@@ -270,6 +364,23 @@ namespace Persistence.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Trajneret");
+                });
+
+            modelBuilder.Entity("Domain.Ushtrimi", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("EmriUshtrimit")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Pershkrimi")
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Ushtrimet");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
@@ -400,6 +511,50 @@ namespace Persistence.Migrations
                     b.ToTable("AspNetUserTokens");
                 });
 
+            modelBuilder.Entity("Domain.Orari", b =>
+                {
+                    b.HasOne("Domain.Grupmoshat", "Grupmosha")
+                        .WithMany("Oraret")
+                        .HasForeignKey("GrupmoshaId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Domain.Ushtrimi", "Ushtrimi")
+                        .WithMany("Oraret")
+                        .HasForeignKey("UshtrimiId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Grupmosha");
+
+                    b.Navigation("Ushtrimi");
+                });
+
+            modelBuilder.Entity("Domain.Raporti", b =>
+                {
+                    b.HasOne("Domain.Grupmoshat", "Grupmosha")
+                        .WithMany("Raportet")
+                        .HasForeignKey("GrupmoshaId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Domain.Lojtari", "Lojtari")
+                        .WithMany("Raportet")
+                        .HasForeignKey("LojtariId");
+
+                    b.HasOne("Domain.Ushtrimi", "Ushtrimi")
+                        .WithMany("Raportet")
+                        .HasForeignKey("UshtrimiId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Grupmosha");
+
+                    b.Navigation("Lojtari");
+
+                    b.Navigation("Ushtrimi");
+                });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
                 {
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
@@ -449,6 +604,25 @@ namespace Persistence.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("Domain.Grupmoshat", b =>
+                {
+                    b.Navigation("Oraret");
+
+                    b.Navigation("Raportet");
+                });
+
+            modelBuilder.Entity("Domain.Lojtari", b =>
+                {
+                    b.Navigation("Raportet");
+                });
+
+            modelBuilder.Entity("Domain.Ushtrimi", b =>
+                {
+                    b.Navigation("Oraret");
+
+                    b.Navigation("Raportet");
                 });
 #pragma warning restore 612, 618
         }

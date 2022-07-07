@@ -34,6 +34,8 @@ namespace API
                 await Seed.SeedDataNjoftim(context, userManager);
                 await Seed.SeedDataTrajneri(context, userManagerTrajneri);
                 await Seed.SeedDataLojtari(context, lojtariManager);
+                await Seed.SeedDataGrupmoshat(context);
+                await Seed.SeedDataUshtrimi(context);
             }
             catch (Exception ex)
             {

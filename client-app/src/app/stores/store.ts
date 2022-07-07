@@ -6,6 +6,10 @@ import NjoftimStore from "./njoftimStore";
 import UserStore from "./userStore";
 import LojtariStore from "./LojtariStore";
 import TrajneriStore from "./TrajneriStore";
+import GrupmoshatStore from "./GrupmoshatStore";
+import UshtrimiStore from "./UshtrimiStore";
+import OrariStore from "./OrariStore";
+import RaportetStore from "./RaportetStore";
 
 interface Store {
     activityStore: ActivityStore;
@@ -15,6 +19,10 @@ interface Store {
     njoftimStore: NjoftimStore;
     TrajneriStore: TrajneriStore;
     lojtariStore: LojtariStore;
+    grupmoshatStore: GrupmoshatStore;
+    ushtrimiStore: UshtrimiStore;
+    orariStore:OrariStore;
+    raportetStore:RaportetStore;
 
 }
 
@@ -25,7 +33,11 @@ export const store: Store = {
     modalStore: new ModalStore(),
     njoftimStore: new NjoftimStore(),
     TrajneriStore: new TrajneriStore(),
-    lojtariStore: new LojtariStore()
+    lojtariStore: new LojtariStore(),
+    grupmoshatStore: new GrupmoshatStore(),
+    ushtrimiStore: new UshtrimiStore(),
+    orariStore: new OrariStore(),
+    raportetStore: new RaportetStore(),
 }
 
 export const StoreContext = createContext(store);
