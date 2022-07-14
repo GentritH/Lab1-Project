@@ -24,7 +24,7 @@ namespace Persistence
         {
             base.OnModelCreating(builder);
 
-            builder.Entity<Raporti>()
+                builder.Entity<Raporti>()
                 .HasKey(pk => new { pk.Id });
                 builder.Entity<Raporti>()
                 .HasOne(p => p.Grupmosha)
@@ -42,7 +42,7 @@ namespace Persistence
 
                 builder.Entity<Orari>()
                 .HasKey(pk => new { pk.Id });
-                 builder.Entity<Orari>()
+                builder.Entity<Orari>()
                 .HasOne(p => p.Grupmosha)
                 .WithMany(p => p.Oraret)
                 .HasForeignKey(pp => pp.GrupmoshaId);

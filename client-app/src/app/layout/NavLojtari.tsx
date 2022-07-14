@@ -18,10 +18,10 @@ export default observer(function NavBarLojtari() {
 
               
                 <Menu.Item as={NavLink} to='/Lojtari/activities' name='Sukseset' />
-                <Menu.Item as={NavLink} to='/Lojtari/njoftimet' name='Njoftimet' />
                 <Menu.Item as={NavLink} to='/Lojtari/raportet' name='Raportet' />
-                <Menu.Item as={NavLink} to='/Lojtari/oraret' name='Oraret' />
                 <Menu.Item as={NavLink} to='/Lojtari/ushtrimet' name='Ushtrimet' />
+                <Menu.Item as={NavLink} to='/Lojtari/Oraret' name='Oraret' />
+                <Menu.Item as={NavLink} to='/Lojtari/njoftimet' name='Njoftimet' />
                 
                  
 

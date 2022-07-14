@@ -4,10 +4,13 @@ using System.Linq;
 using System.Threading.Tasks;
 using Application.Ushtrimet;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Authorization;
 using Domain;
 
+
 namespace API.Controllers
-{
+{ 
+    [AllowAnonymous]
     public class UshtrimetController : BaseApiController
     {
         [HttpGet]

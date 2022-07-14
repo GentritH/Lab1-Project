@@ -12,7 +12,7 @@ using Persistence;
 
 namespace API.Controllers
 {
-
+    [AllowAnonymous]
     public class LojtariController : BaseApiController
     {
         

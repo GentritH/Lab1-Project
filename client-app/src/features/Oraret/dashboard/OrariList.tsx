@@ -32,32 +32,58 @@ export default observer(function OraretList() {
             <Table.Body>
               <Table.Row>
                 <Table.Cell>1</Table.Cell>
-                <Table.Cell>{ushtrimiStore.getEmriUshtrimitById(oraret.hene)}</Table.Cell>
-
+                <Table.Cell>{ushtrimiStore.getEmriUshtrimitById(oraret.hene1)}</Table.Cell>
+                <Table.Cell>{ushtrimiStore.getEmriUshtrimitById(oraret.marte1)}</Table.Cell>
+                <Table.Cell>{ushtrimiStore.getEmriUshtrimitById(oraret.merkure1)}</Table.Cell>
+                <Table.Cell>{ushtrimiStore.getEmriUshtrimitById(oraret.enjte1)}</Table.Cell>
+                <Table.Cell>{ushtrimiStore.getEmriUshtrimitById(oraret.premte1)}</Table.Cell>
 
               </Table.Row>
               <Table.Row>
                 <Table.Cell>2</Table.Cell>
-                 <Table.Cell>{ushtrimiStore.getEmriUshtrimitById(oraret.marte)}</Table.Cell>
-
+                 <Table.Cell>{ushtrimiStore.getEmriUshtrimitById(oraret.hene2)}</Table.Cell>
+                <Table.Cell>{ushtrimiStore.getEmriUshtrimitById(oraret.marte2)}</Table.Cell>
+                <Table.Cell>{ushtrimiStore.getEmriUshtrimitById(oraret.merkure2)}</Table.Cell>
+                <Table.Cell>{ushtrimiStore.getEmriUshtrimitById(oraret.enjte2)}</Table.Cell>
+                <Table.Cell>{ushtrimiStore.getEmriUshtrimitById(oraret.premte2)}</Table.Cell>
               </Table.Row>
+              
               <Table.Row>
                 <Table.Cell>3</Table.Cell>
-                <Table.Cell>{ushtrimiStore.getEmriUshtrimitById(oraret.merkure)}</Table.Cell>
-
+                <Table.Cell>{ushtrimiStore.getEmriUshtrimitById(oraret.hene3)}</Table.Cell>
+                <Table.Cell>{ushtrimiStore.getEmriUshtrimitById(oraret.marte3)}</Table.Cell>
+                <Table.Cell>{ushtrimiStore.getEmriUshtrimitById(oraret.merkure3)}</Table.Cell>
+                <Table.Cell>{ushtrimiStore.getEmriUshtrimitById(oraret.enjte3)}</Table.Cell>
+                <Table.Cell>{ushtrimiStore.getEmriUshtrimitById(oraret.premte3)}</Table.Cell>
               </Table.Row>
               <Table.Row>
                 <Table.Cell>4</Table.Cell>
-                <Table.Cell>{ushtrimiStore.getEmriUshtrimitById(oraret.enjte)}</Table.Cell>
-
+                <Table.Cell>{ushtrimiStore.getEmriUshtrimitById(oraret.hene4)}</Table.Cell>
+                <Table.Cell>{ushtrimiStore.getEmriUshtrimitById(oraret.marte4)}</Table.Cell>
+                <Table.Cell>{ushtrimiStore.getEmriUshtrimitById(oraret.merkure4)}</Table.Cell>
+                <Table.Cell>{ushtrimiStore.getEmriUshtrimitById(oraret.enjte4)}</Table.Cell>
+                <Table.Cell>{ushtrimiStore.getEmriUshtrimitById(oraret.premte4)}</Table.Cell>
               </Table.Row>
               <Table.Row>
                 <Table.Cell>5</Table.Cell>
-                <Table.Cell>{ushtrimiStore.getEmriUshtrimitById(oraret.premte)}</Table.Cell>
-
+                <Table.Cell>{ushtrimiStore.getEmriUshtrimitById(oraret.hene5)}</Table.Cell>
+                <Table.Cell>{ushtrimiStore.getEmriUshtrimitById(oraret.marte5)}</Table.Cell>
+                <Table.Cell>{ushtrimiStore.getEmriUshtrimitById(oraret.merkure5)}</Table.Cell>
+                <Table.Cell>{ushtrimiStore.getEmriUshtrimitById(oraret.enjte5)}</Table.Cell>
+                <Table.Cell>{ushtrimiStore.getEmriUshtrimitById(oraret.premte5)}</Table.Cell>
               </Table.Row>
-
+              <Table.Row>
+                <Table.Cell>6</Table.Cell>
+                <Table.Cell>{ushtrimiStore.getEmriUshtrimitById(oraret.hene6)}</Table.Cell>
+                <Table.Cell>{ushtrimiStore.getEmriUshtrimitById(oraret.marte6)}</Table.Cell>
+                <Table.Cell>{ushtrimiStore.getEmriUshtrimitById(oraret.merkure6)}</Table.Cell>
+                <Table.Cell>{ushtrimiStore.getEmriUshtrimitById(oraret.enjte6)}</Table.Cell>
+                <Table.Cell>{ushtrimiStore.getEmriUshtrimitById(oraret.premte6)}</Table.Cell>
+              </Table.Row>
             </Table.Body>
+
+
+
             <Button
               onClick={() => orariStore.selectOrari(oraret.id)}
               floated="right"

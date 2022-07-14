@@ -10,9 +10,10 @@ using Microsoft.EntityFrameworkCore;
 using Persistence;
 
 
+
 namespace API.Controllers
 {
- 
+    [AllowAnonymous]
     public class TrajneriController: BaseApiController
     { 
         [HttpGet]

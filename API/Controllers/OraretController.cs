@@ -10,7 +10,8 @@ using Application.Oraret;
 
 namespace API.Controllers
 {
-    public class OraretController : BaseApiController
+    [AllowAnonymous]
+    public class DController : BaseApiController
     {
         
         [HttpGet]

@@ -22,7 +22,7 @@ export default observer(function GrupmoshatTDashboard() {
     if (grupmoshatStore.loadingInitial) return <Dimmer active><Loader>Loading the app Football Academy</Loader></Dimmer>;
     return (
         <div className="ui grid">
-            <Grid.Column width='7'>
+            <Grid.Column width='8'>
                 <GrupmoshatList />
             </Grid.Column>
             <Grid.Column width='6'>

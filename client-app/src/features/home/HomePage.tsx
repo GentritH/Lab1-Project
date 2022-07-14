@@ -34,8 +34,8 @@ export default observer(function HomePage() {
                 ) : (
                         <>
                         <Button onClick={() => modalStore.openModal(<LoginFormTrajneri />)} size='huge' inverted>
-                            Login as an Trajner!
-                        </Button>
+                            Login as Trajner!
+                        </Button><br></br>
                         <br></br>
 
                     </>

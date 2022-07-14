@@ -3,7 +3,7 @@ import  { useEffect } from 'react';
 import { Button, Container, Dimmer, Grid, Loader } from "semantic-ui-react";
 import { useStore } from "../../../app/stores/store";
 import RaportetForm from "../Form/RaportetForm";
-import RaportetDetails from "./RaportetDetails";
+import RaportetDetailsLojtari from "./RaportetDetailsLojtari";
 import RaportetListLojtari from "./RaportetListLojtari";
 
 
@@ -34,20 +34,18 @@ export default observer(function RaportetDashboard() {
 
 
 
-    if (raportetStore.loadingInitial) return <Dimmer active><Loader>Loading the app Football Academy</Loader></Dimmer>;
+    if (raportetStore.loadingInitial) return <Dimmer active><Loader>Loading the app</Loader></Dimmer>;
     return (
         <div className="ui grid">
             <Grid.Column width='10'>
                 <RaportetListLojtari />
             </Grid.Column>
             <Grid.Column width='6'>
-                <Container>
-                    <Button onClick={() => openForm()} color='blue' content='Krijo Planifikimin' size='big' ></Button>
-                </Container>
+                
                 <h2 >Te Dhenat Per Raportin:</h2>
 
                 {selectedRaportet && !editMode &&
-                    <RaportetDetails
+                    <RaportetDetailsLojtari
                     />}
                 {editMode &&
                     <RaportetForm />}

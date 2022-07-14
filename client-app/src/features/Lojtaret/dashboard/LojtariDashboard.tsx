@@ -32,7 +32,7 @@ export default observer(function LojtaretDashboard() {
             </Grid.Column>
             <Grid.Column width='6'>
 
-                <Button color="teal" onClick={() => modalStore.openModal(<RegisterFormLojtari />)} size='huge' >
+                <Button color="blue" onClick={() => modalStore.openModal(<RegisterFormLojtari />)} size='huge' >
                     Regjistro Lojtarin!
                 </Button>
                 <h2 >Lojtari:</h2>

@@ -1,7 +1,7 @@
 import { observer } from "mobx-react-lite";
 import { Segment, Table, TableBody} from "semantic-ui-react";
 import { useStore } from "../../../app/stores/store";
-import RaportetListItem from "./RaportetListItem";
+import RaportetListItemLojtari from "./RaportetListItemLojtari";
 
 
 
@@ -25,14 +25,16 @@ export default observer(function RaportetList(){
                             <Table.HeaderCell width='8'>Ushtrimi</Table.HeaderCell>
                             <Table.HeaderCell width='8'>Muaji</Table.HeaderCell>
                             <Table.HeaderCell width='8'>Java</Table.HeaderCell>
+                            <Table.HeaderCell width='10'>Komenti</Table.HeaderCell>
                             <Table.HeaderCell>Shiko</Table.HeaderCell>
-                            <Table.HeaderCell>Fshije</Table.HeaderCell>
+                            
+                            
                         </Table.Row>
                     </Table.Header>
                     <TableBody>
                      
                       {RaportetById.filter(lojtari => lojtari.lojtariId === lojtaret?.id).map(planet => (
-                             <RaportetListItem key={planet.id} raporti={planet} />
+                             <RaportetListItemLojtari key={planet.id} raporti={planet} />
                          ))}
                     </TableBody>
                 </Table>

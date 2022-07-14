@@ -29,6 +29,7 @@ import LoginFormLojtari from '../../features/Lojtaret/form/LoginFormLojtari';
 import LojtariForm from '../../features/Lojtaret/form/LojtariForm';
 import RaportetDashboardLojtari from '../../features/Raportet/Dashboard/RaportetDashboardLojtari';
 import UshtrimiDashboard from '../../features/Ushtrimet/dashboard/UshtrimiDashboard';
+import UshtrimiDashboardLojtari from '../../features/Ushtrimet/dashboard/UshtrimiDashboardLojtari';
 import UshtrimiDetails from '../../features/Ushtrimet/dashboard/UshtrimiDetails';
 import UshtrimiForm from '../../features/Ushtrimet/form/UshtrimiForm';
 import GrupmoshatDashboard from '../../features/Grupmoshat/dashboard/GrupmoshatDashboard';
@@ -79,15 +80,21 @@ function App() {
                 exact path="/Lojtari/Profili/" component={LojtariDashboard} />
                 <Route exact path='/Lojtari/activities' component={ActivityDashboard} />
                 <Route path='/Lojtari/activities/:id' component={ActivityDetails} />
+                <Route exact path='/Lojtari/ushtrimet' component={UshtrimiDashboardLojtari} />
+                <Route path='/Lojtari/ushtrimet/:id' component={UshtrimiDetails} />
                 <Route exact path='/Lojtari/njoftimet' component={NjoftimDashboard} />
                 <Route path='/Lojtari/njoftimet/:id' component={NjoftimDetails} />
                 <Route exact path='/Lojtari/njoftimet' component={NjoftimDashboard} />
                 <Route path='/Lojtari/njoftimet/:id' component={NjoftimDetails} />
-                <Route  path='/Lojtari/Raportet' component={RaportetDashboardLojtari} />
+                <Route path='/Lojtari/Raportet' component={RaportetDashboardLojtari} />
+                <Route path='/Lojtari/D' component={OrariDashboard} />
+                <Route path='/Lojtari/D/:id' component={OrariDetails} />
                 
 
                  <Route key={location.key} path={['/createActivity', '/manage/:id']} component={ActivityForm} />
+                 <Route key={location.key} path={['/createUshtrimi', '/manage1/:id']} component={UshtrimiForm} />
                  <Route key={location.key} path={['/createNjoftim', '/manage2/:id']} component={NjoftimForm} />
+                 {/* <Route key={location.key} path={['/createOrari', '/manageOraret/:id']} component={OrariForm} /> */}
                 //<Route path='/errors' component={TestErrors} />
                 //<Route path='/server-error' component={ServerError} />
                 //<Route path='/login' component={LoginForm} />
@@ -126,10 +133,10 @@ function App() {
                 <Route exact path='/Trajneri/raportet' component={RaportetDashboard} />
                 <Route  path='/Trajneri/ushtrimet' component={UshtrimiDashboard} />
                 <Route  path='/Trajneri/grupmoshatT' component={GrupmoshatDashboard} />
-                <Route  path='/Trajneri/Oraret' component={OrariDashboard} />
+                <Route  path='/Trajneri/D' component={OrariDashboard} />
                 <Route path='/Trajneri/ushtrimet/:id' component={UshtrimiDetails} />
                 <Route path='/Trajneri/grupmoshatT/:id' component={GrupmoshatDetails} />
-                <Route path='/Trajneri/Oraret/:id' component={OrariDetails} />
+                <Route path='/Trajneri/D/:id' component={OrariDetails} />
                 
 
                 <Route key={location.key} path={['/Trajneri/trajneret', '/Trajneri/manage4/:id']} component={TrajneriForm} />

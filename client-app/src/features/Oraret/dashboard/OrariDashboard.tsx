@@ -39,7 +39,7 @@ export default observer(function OraretDashboard() {
           onClick={() => orariStore.openForm()}
           content="Krijo Orarin"
           size="big"
-          color="teal"
+          color="blue"
         />
         {selectedOrari && !editMode &&
           <OrariDetails />}

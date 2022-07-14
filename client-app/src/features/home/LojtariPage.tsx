@@ -27,7 +27,7 @@ export default observer(function LojtariPage() {
                 ) : (
                     <>
                         {/* <Button onClick={() => modalStore.openModal(<LoginFormLojtari />)} size='huge' inverted>
-                            Login as Player!
+                            Login - Player!
                         </Button> */}
 
                     </>

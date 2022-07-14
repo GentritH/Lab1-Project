@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Persistence;
 
 namespace Persistence.Migrations
 {
     [DbContext(typeof(DataContext))]
-    partial class DataContextModelSnapshot : ModelSnapshot
+    [Migration("20220714151846_InitialCreate")]
+    partial class InitialCreate
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -232,97 +234,22 @@ namespace Persistence.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<string>("Enjte1")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Enjte2")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Enjte3")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Enjte4")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Enjte5")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Enjte6")
+                    b.Property<string>("Enjte")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<Guid>("GrupmoshaId")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<string>("Hene1")
+                    b.Property<string>("Hene")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Hene2")
+                    b.Property<string>("Marte")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Hene3")
+                    b.Property<string>("Merkure")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Hene4")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Hene5")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Hene6")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Marte1")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Marte2")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Marte3")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Marte4")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Marte5")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Marte6")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Merkure1")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Merkure2")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Merkure3")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Merkure4")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Merkure5")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Merkure6")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Premte1")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Premte2")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Premte3")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Premte4")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Premte5")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Premte6")
+                    b.Property<string>("Premte")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<Guid>("UshtrimiId")

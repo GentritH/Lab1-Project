@@ -23,7 +23,7 @@ export default class OrariStore {
     return Array.from(this.oraretRegistry.values()).sort();
 }
 public getOrariL = (id: string) => {
-  return this.oraretRegistry.get(id)?.enjte;
+  return this.oraretRegistry.get(id)?.enjte1;
 };
   get groupedOraret(){
     return Object.entries(

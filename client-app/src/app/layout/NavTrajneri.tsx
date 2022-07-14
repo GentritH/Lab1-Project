@@ -10,7 +10,7 @@ export default observer(function NavBarTrajneri() {
         <>
            <Menu inverted  fixed='top'>
             <Container >
-                <Menu.Item  style={{ marginRight: '6px' }} as={NavLink} exact to='/' header>
+                <Menu.Item style={{ marginRight: '6px' }} as={NavLink} exact to='/' header>
                     <img  src='/assets/logo.ico' alt='logo' style={{ marginRight: '10px' }} />
                     Akademi Futbolli
                 </Menu.Item>
@@ -22,14 +22,14 @@ export default observer(function NavBarTrajneri() {
                 <Menu.Item as={NavLink} to='/Trajneri/raportet' name='Raportet' />
                 <Menu.Item as={NavLink} to='/Trajneri/grupmoshatT' name='Grupmoshat' />
                 <Menu.Item as={NavLink} to='/Trajneri/ushtrimet' name='Ushtrimet' />
-                <Menu.Item as={NavLink} to='/Trajneri/oraret' name='Orari' />
+                <Menu.Item as={NavLink} to='/Trajneri/Oraret' name='Oraret' />
 
                 
                 {/*<Menu.Item>
                     <Button as={NavLink} to='/Trajneri/createNjoftim' positive content='Create Njoftim' />
                 </Menu.Item>*/}
                 <Menu.Item>
-                    <Button as={NavLink} to='/Trajneri/createActivity' positive content='Create Sukseset' floated='right' />
+                    <Button as={NavLink} to='/Trajneri/createActivity' positive content='Shto Sukseset' floated='right' />
                 </Menu.Item>
 
                 <Menu.Item style={{ marginRight: '15px' }} inverted position='right'>
