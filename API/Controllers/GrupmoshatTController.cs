@@ -10,7 +10,7 @@ using Microsoft.AspNetCore.Authorization;
 namespace API.Controllers
 {
 
-    [AllowAnonymous]
+//    [AllowAnonymous]
     public class GrupmoshatTController : BaseApiController
     {
         

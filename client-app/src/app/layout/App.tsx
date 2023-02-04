@@ -91,7 +91,7 @@ function App() {
                 <Route path='/Lojtari/D/:id' component={OrariDetails} />
                 
 
-                 <Route key={location.key} path={['/createActivity', '/manage/:id']} component={ActivityForm} />
+                 <Route key={location.key} path={['/createActivity', '/manageActivities/:id']} component={ActivityForm} />
                  <Route key={location.key} path={['/createUshtrimi', '/manage1/:id']} component={UshtrimiForm} />
                  <Route key={location.key} path={['/createNjoftim', '/manage2/:id']} component={NjoftimForm} />
                  {/* <Route key={location.key} path={['/createOrari', '/manageOraret/:id']} component={OrariForm} /> */}
@@ -140,7 +140,7 @@ function App() {
                 
 
                 <Route key={location.key} path={['/Trajneri/trajneret', '/Trajneri/manage4/:id']} component={TrajneriForm} />
-                <Route key={location.key} path={['/Trajneri/createActivity', '/manage/:id']} component={ActivityForm} />
+                <Route key={location.key} path={['/Trajneri/createActivity', '/manageActivities/:id']} component={ActivityForm} />
                 <Route key={location.key} path={['/Trajneri/createNjoftim', '/manage2/:id']} component={NjoftimForm} />
                 <Route key={location.key} path={['/Trajneri/createGrupmoshat', '/Trajneri/manage/:id']} component={GrupmoshatForm} />
                 <Route key={location.key} path={['/Trajneri/createUshtrimi', '/Trajneri/manage1/:id']} component={UshtrimiForm} />

@@ -10,7 +10,7 @@ using Domain;
 
 namespace API.Controllers
 { 
-    [AllowAnonymous]
+//    [AllowAnonymous]
     public class UshtrimetController : BaseApiController
     {
         [HttpGet]

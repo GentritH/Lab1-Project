@@ -13,7 +13,7 @@ using Persistence;
 
 namespace API.Controllers
 {
-    [AllowAnonymous]
+//    [AllowAnonymous]
     public class TrajneriController: BaseApiController
     { 
         [HttpGet]

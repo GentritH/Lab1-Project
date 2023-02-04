@@ -30,7 +30,7 @@ export default function LojtariListItem({ lojtari }: Props) {
             <TableCell>{lojtari.mbiemri}</TableCell>
             <TableCell>{lojtari.userName}</TableCell>
             <TableCell>{lojtari.grupmosha}</TableCell>
-            <TableCell>{lojtari.emriPrindit}</TableCell>
+            
             <TableCell>{lojtari.email}</TableCell>
             {/* <TableCell>{lojtari.numriTelefonit}</TableCell> */}
             <TableCell>

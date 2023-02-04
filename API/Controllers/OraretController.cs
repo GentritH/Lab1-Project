@@ -10,7 +10,7 @@ using Application.Oraret;
 
 namespace API.Controllers
 {
-    [AllowAnonymous]
+//    [AllowAnonymous]
     public class DController : BaseApiController
     {
         

@@ -19,7 +19,7 @@ export default observer(function LojtariList(){
                             <Table.HeaderCell width='4'>Mbiemri</Table.HeaderCell>
                             <Table.HeaderCell width='4'>Username</Table.HeaderCell>
                             <Table.HeaderCell width='8'>Grupmosha</Table.HeaderCell>
-                            <Table.HeaderCell width='8'>EmriPrindit</Table.HeaderCell>
+                            
                             <Table.HeaderCell width='8'>Email</Table.HeaderCell>
                             {/* <Table.HeaderCell width='9'>NumriTelefonit</Table.HeaderCell> */}
                             <Table.HeaderCell>Shiko</Table.HeaderCell>

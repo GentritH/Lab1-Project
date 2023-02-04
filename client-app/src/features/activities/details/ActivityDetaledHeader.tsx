@@ -47,7 +47,7 @@ export default observer (function ActivityDetailedHeader({activity}: Props) {
             </Segment>
             <Segment clearing attached='bottom'>
                 
-                <Button as={Link} to={`/manage/${activity.id}`} color='orange' floated='right'>
+                <Button as={Link} to={`/Trajneri/manageActivities/${activity.id}`} color='orange' floated='right'>
                     Ndrysho Event
                 </Button>
             </Segment>

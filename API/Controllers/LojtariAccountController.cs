@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace API.Controllers
 {
-    [AllowAnonymous]
+//    [AllowAnonymous]
     [ApiController]
     [Route("api/[controller]")]
     public class LojtariAccountController : ControllerBase
